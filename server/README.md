@@ -1,0 +1,1 @@
+Packages installed - express, nodemon, mongoose, mongodb, express-async-errors, dotenv
