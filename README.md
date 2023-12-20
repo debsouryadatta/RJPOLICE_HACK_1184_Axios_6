@@ -41,7 +41,27 @@ Total 8 Routes
 
 &nbsp;&nbsp;
 
-### Machine Learning Model
+### Streaming of IP Camera into browser
+
+The process of streaming an IP Camera into a browser involves several steps:
+
+1. **Stream IP Camera to VLC player**: The IP camera stream is first sent to a VLC player using a specific URL format. For a TP-Link C200 model, the URL format is `rtsp://{username}:{password}@{ip}:554/stream1`.
+
+2. **Convert stream to HLS**: The stream is then converted to HLS (HTTP Live Streaming) using the FFMPEG command. The command also specifies the output file and other parameters such as packet flushing, delay, global header flags, HLS time, list size, and video codec.
+
+3. **Cleanup streamed `.ts` files**: A script (`cleaner.js`) is run to delete the streamed/served `.ts` files from the local directory to save space.
+
+4. **Serve the auto-generated HLS (m3u8) file**: Another script (`hls-server.js`) is run to serve the auto-generated HLS file.
+
+5. **Test HLS file in browser**: The HLS file can then be tested in a browser by visiting `cookpete.com/react-player` and inputting the m3u8 URL (`http://localhost:4000/index.m3u8`).
+
+The process also involves the use of several packages including express, nodemon, mongoose, mongodb, express-async-errors, dotenv, and find-remove.
+
+
+&nbsp;&nbsp;
+
+
+### Machine Learning Model for Image Processing
 
 The code initializes a video capture object (cv2.VideoCapture) to capture frames from a live camera feed (cam = cv2.VideoCapture(0)).
 The code enters a loop where it continuously captures frames from the camera (cam.read()).
