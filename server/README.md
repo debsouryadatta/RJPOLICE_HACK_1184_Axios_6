@@ -7,9 +7,9 @@
 
 
 ## Convert stream to HLS
-Execute FFMPEG command
+Execute FFMPEG command after installing ffmpeg in local machine. Link - https://phoenixnap.com/kb/ffmpeg-windows
 
-`.\server\libs\ffmpeg.exe -i rtsp://{username}:{password}@{ip}:554/stream1 -fflags flush_packets -max_delay 5 -flags -global_header -hls_time 5 -hls_list_size 3 -vcodec copy -y .\videos\ipcam\index.m3u8`
+`ffmpeg -i rtsp://{username}:{password}@{ip}:554/stream1 -fflags flush_packets -max_delay 5 -flags -global_header -hls_time 5 -hls_list_size 3 -vcodec copy -y .\videos\ipcam\index.m3u8`
 
 After successful execution, we should see the converted video files (`index.m3u8 *.ts`)
 
@@ -34,3 +34,9 @@ After successful execution, we should see the converted video files (`index.m3u8
 
 
 Packages installed - express, nodemon, mongoose, mongodb, express-async-errors, dotenv, find-remove
+ffmpeg
+
+<!-- .\libs\ffmpeg.exe -i rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1 -fflags flush_packets -max_delay 5 -flags -global_header -hls_time 5 -hls_list_size 3 -vcodec copy -y .\videos\ipcam\index.m3u8 -->
+
+
+<!-- ffmpeg -i rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1 -fflags flush_packets -max_delay 5 -flags -global_header -hls_time 5 -hls_list_size 3 -vcodec copy -y .\videos\ipcam\index.m3u8 -->

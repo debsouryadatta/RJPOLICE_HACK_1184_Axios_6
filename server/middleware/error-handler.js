@@ -1,7 +1,7 @@
 const errorHandlerMiddleware = (err, req, res, next) => {
   let customError = {
     // set default
-    statusCode: err.statusCode || StatusCodes.INTERNAL_SERVER_ERROR,
+    statusCode: err.statusCode || 500,
     msg: err.message || "Something went wrong try again later",
   };
 
@@ -25,7 +25,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.statusCode = 404;
   }
   // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err })
-  return res.status(customError.statusCode).json({ msg: customError.msg });
+  return res.status(customError.statusCode).json({success: false, message: customError.msg});
 };
 
 module.exports = errorHandlerMiddleware;

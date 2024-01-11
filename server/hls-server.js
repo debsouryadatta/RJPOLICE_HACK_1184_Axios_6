@@ -13,7 +13,7 @@ http.createServer(function (request, response) {
         /** add other headers as per requirement */
     };
     if (request.method === 'OPTIONS') {
-        respose.writeHead(204, headers);
+        response.writeHead(204, headers);
         response.end();
         return;
     }
@@ -40,3 +40,5 @@ http.createServer(function (request, response) {
     });
 }).listen(PORT);
 console.log(`Server listening PORT ${PORT}`);
+
+// Firewall or Antivirus blocking the stream: Sometimes, firewall or antivirus software can block the stream. Check your firewall and antivirus settings.
