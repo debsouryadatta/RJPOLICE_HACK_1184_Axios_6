@@ -8,23 +8,6 @@ import {
 } from "@react-google-maps/api";
 import { Input } from "@material-tailwind/react";
 
-const markers = [
-  {
-    id: 1,
-    name: "Qobustan",
-    position: { lat: 40.0709493, lng: 49.3694411 },
-  },
-  {
-    id: 2,
-    name: "Sumqayit",
-    position: { lat: 40.5788843, lng: 49.5485073 },
-  },
-  {
-    id: 3,
-    name: "Baku",
-    position: { lat: 40.3947365, lng: 49.6898045 },
-  },
-];
 
 const Map = ({markers}) => {
   const { isLoaded } = useLoadScript({

@@ -20,7 +20,8 @@ function Icon({ id, open }) {
   );
 }
  
-export function Camera() {
+export function Camera({camera}) {
+  // console.log(camera?.cameraModel);
   const [open, setOpen] = React.useState(0);
  
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
@@ -28,11 +29,12 @@ export function Camera() {
   return (
     <div className="">
       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(1)}>Nikon 23M</AccordionHeader>
+        <AccordionHeader onClick={() => handleOpen(1)}>{camera?.cameraModel}</AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at. We&apos;re constantly
-          growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
-          ourselves and actualize our dreams.
+          <p><b>Camera Model : </b>{camera.cameraModel}</p>
+          <p><b>Camera Id : </b>{camera._id}</p>
+          <p><b>Camera Owner : </b>{camera.name}</p>
+          <p><b>Owner Ph no. : </b>{camera.phoneNumber}</p>
         </AccordionBody>
       </Accordion>
     </div>
