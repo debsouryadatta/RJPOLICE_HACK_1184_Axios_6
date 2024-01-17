@@ -11,7 +11,7 @@ import { Input } from "@material-tailwind/react";
 
 const Map = ({markers}) => {
   const { isLoaded } = useLoadScript({
-    // googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
+    googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
     libraries: ["places"],
   });
 

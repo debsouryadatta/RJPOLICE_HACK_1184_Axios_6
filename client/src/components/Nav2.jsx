@@ -78,7 +78,7 @@ export function Nav2() {
           variant="h6"
           className="mr-4 cursor-pointer py-1.5"
         >
-          Material Tailwind
+          Axios
         </Typography>
         <div className="hidden lg:block">
           <NavList />

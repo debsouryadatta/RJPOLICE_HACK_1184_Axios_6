@@ -1,87 +1,87 @@
 const { default: mongoose } = require("mongoose");
-require('dotenv').config();
+require("dotenv").config();
 const Camera = require("./models/Camera");
+const Image = require("./models/Image");
+const cloudinary = require("cloudinary").v2;
 
 const arr = [
   {
-    name: 'John Doe',
-    email: 'johndoe@gmail.com',
-    phoneNumber: '919876543210',
-    address: '123 Main St, Agartala, Tripura, India',
-    pincode: '799001',
-    cameraModel: 'Canon EOS 5D Mark IV',
-    cameraDMSLocation: {lat: 23.829321, lng: 91.277847},
-    cameraResolution: '30.4 MP',
-    cameraRange: '100-32000 ISO',
-    ipAddress: '0.0.0.0',
-    verificationStatus: 'verified',
-    rtspLink: 'rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1',
+    name: "John Doe",
+    email: "johndoe@gmail.com",
+    phoneNumber: "919876543210",
+    address: "123 Main St, Agartala, Tripura, India",
+    pincode: "799001",
+    cameraModel: "Canon EOS 5D Mark IV",
+    cameraDMSLocation: { lat: 23.829321, lng: 91.277847 },
+    cameraResolution: "30.4 MP",
+    cameraRange: "100-32000 ISO",
+    ipAddress: "0.0.0.0",
+    verificationStatus: "verified",
+    rtspLink: "rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1",
     __v: 0,
-    licenseKey: '61aaa225-e319-4f65-a456-f5356693c909'
+    licenseKey: "61aaa225-e319-4f65-a456-f5356693c909",
   },
   {
-    name: 'Jane Doe',
-    email: 'janedoe@gmail.com',
-    phoneNumber: '919765432109',
-    address: 'Netaji Chowmuhani, Agartala, Tripura, India',
-    pincode: '799002',
-    cameraModel: 'Nikon D850',
-    cameraDMSLocation: {lat: 23.8271, lng: 91.2784},
-    cameraResolution: '45.7 MP',
-    cameraRange: '64-25600 ISO',
-    ipAddress: '0.0.0.0',
-    verificationStatus: 'verified',
-    rtspLink: 'rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1',
-    __v: 0
+    name: "Jane Doe",
+    email: "janedoe@gmail.com",
+    phoneNumber: "919765432109",
+    address: "Netaji Chowmuhani, Agartala, Tripura, India",
+    pincode: "799002",
+    cameraModel: "Nikon D850",
+    cameraDMSLocation: { lat: 23.8271, lng: 91.2784 },
+    cameraResolution: "45.7 MP",
+    cameraRange: "64-25600 ISO",
+    ipAddress: "0.0.0.0",
+    verificationStatus: "verified",
+    rtspLink: "rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1",
+    __v: 0,
   },
   {
-    name: 'Bob Smith',
-    email: 'bobsmith@gmail.com',
-    phoneNumber: '919654321098',
-    address: 'Post office agartala tripura India',
-    pincode: '799003',
-    cameraModel: 'Sony Alpha a7 III',
-    cameraDMSLocation: {lat: 23.8500, lng: 91.3007},
-    cameraResolution: '24.2 MP',
-    cameraRange: '100-51200 ISO',
-    ipAddress: '0.0.0.0',
-    verificationStatus: 'verified',
-    rtspLink: 'rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1',
-    __v: 0
+    name: "Bob Smith",
+    email: "bobsmith@gmail.com",
+    phoneNumber: "919654321098",
+    address: "Post office agartala tripura India",
+    pincode: "799003",
+    cameraModel: "Sony Alpha a7 III",
+    cameraDMSLocation: { lat: 23.85, lng: 91.3007 },
+    cameraResolution: "24.2 MP",
+    cameraRange: "100-51200 ISO",
+    ipAddress: "0.0.0.0",
+    verificationStatus: "verified",
+    rtspLink: "rtsp://admin:10iLtxyh@192.168.29.79/live/ch00_1",
+    __v: 0,
   },
   {
-    name: 'Alice Smith',
-    email: 'alicesmith@gmail.com',
-    phoneNumber: '919543210987',
-    address: 'radhanagar agartala tripura india',
-    pincode: '799004',
-    cameraModel: 'Fujifilm X-T4',
-    cameraDMSLocation: {lat: 23.8450, lng: 91.2801},
-    cameraResolution: '26.1 MP',
-    cameraRange: '160-12800 ISO',
-    ipAddress: '0.0.0.0',
-    verificationStatus: 'verified',
-    rtspLink: 'rtsp://192.168.1.13:554/stream1',
-    __v: 0
+    name: "Alice Smith",
+    email: "alicesmith@gmail.com",
+    phoneNumber: "919543210987",
+    address: "radhanagar agartala tripura india",
+    pincode: "799004",
+    cameraModel: "Fujifilm X-T4",
+    cameraDMSLocation: { lat: 23.845, lng: 91.2801 },
+    cameraResolution: "26.1 MP",
+    cameraRange: "160-12800 ISO",
+    ipAddress: "0.0.0.0",
+    verificationStatus: "verified",
+    rtspLink: "rtsp://192.168.1.13:554/stream1",
+    __v: 0,
   },
   {
-    name: 'David Lee',
-    email: 'davidlee@gmail.com',
-    phoneNumber: '919432109876',
-    address: 'motorstand agartala tripura india',
-    pincode: '799005',
-    cameraModel: 'Panasonic Lumix DC-S1R',
-    cameraDMSLocation: { lat: 23.8248, lng: 91.2683},
-    cameraResolution: '47.3 MP',
-    cameraRange: '100-51200 ISO',
-    ipAddress: '0.0.0.0',
-    verificationStatus: 'verified',
-    rtspLink: 'rtsp://192.168.1.14:554/stream1',
-    __v: 0
-  }
-]
-
-
+    name: "David Lee",
+    email: "davidlee@gmail.com",
+    phoneNumber: "919432109876",
+    address: "motorstand agartala tripura india",
+    pincode: "799005",
+    cameraModel: "Panasonic Lumix DC-S1R",
+    cameraDMSLocation: { lat: 23.8248, lng: 91.2683 },
+    cameraResolution: "47.3 MP",
+    cameraRange: "100-51200 ISO",
+    ipAddress: "0.0.0.0",
+    verificationStatus: "verified",
+    rtspLink: "rtsp://192.168.1.14:554/stream1",
+    __v: 0,
+  },
+];
 
 // const fs = require('fs');
 // const path = require('path');
@@ -97,23 +97,66 @@ const arr = [
 //   console.log(`File was created on: ${stats.birthtime}`);
 // });
 
-const create = async ()=> {
-  mongoose.connect(process.env.MONGO_URI)
+const create = async () => {
+  mongoose.connect(process.env.MONGO_URI);
   const response = await Camera.insertMany(arr);
   console.log(response);
-}
-const read = async ()=> {
-  mongoose.connect(process.env.MONGO_URI)
+};
+const read = async () => {
+  mongoose.connect(process.env.MONGO_URI);
   const response = await Camera.find({});
   console.log(response);
-}
+};
 
-const deleteAll = async ()=> {
-  mongoose.connect(process.env.MONGO_URI)
+const read2 = async () => {
+  try {
+    mongoose.connect(process.env.MONGO_URI);
+    const response = await Image.find({});
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const deleteAll = async () => {
+  mongoose.connect(process.env.MONGO_URI);
   const response = await Camera.deleteMany({});
+  console.log(response);
+};
+
+const deleteFromCloudinary = async () => {
+  cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
+
+  try {
+     // Delete images from Cloudinary
+  const resources = await cloudinary.api.resources({
+    type: "upload",
+    prefix: "raj-hack",
+  });
+  
+  await cloudinary.uploader.destroy(resources.resources[0].public_id);
+
+  // for (let resource of resources.resources) {
+  //   await cloudinary.uploader.destroy(resource.public_id);
+  // } 
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const deleteAllImagesInDb = async () => {
+  mongoose.connect(process.env.MONGO_URI);
+  const response = await Image.deleteMany({});
   console.log(response);
 }
 
 // deleteAll();
-create();
+// create();
 // read();
+// read2();
+deleteFromCloudinary();
+deleteAllImagesInDb();
