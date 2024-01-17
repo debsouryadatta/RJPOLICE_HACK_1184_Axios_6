@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RJ Police</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="main-nav container flex" id="sidemenu">
+        <a href="#" onclick="reload()" class="police-logo">
+          <img src="Logo.png" />
+        </a>
+        <div class="nav-links">
+          <ul class="flex">
+            <li class="hover-link nav-item" id="home">
+              <a href="#page1">Home</a>
+            </li>
+            <li class="hover-link nav-item" id="about">
+              <a href="#page2">About Us</a>
+            </li>
+            <li class="hover-link nav-item" id="faqs">
+              <a href="#page3">FAQs</a>
+            </li>
+            <li class="hover-link nav-item" id="contact">
+              <a href="#page4">Contact Us</a>
+            </li>
+            <button class="login flex open-button">Login/Register</button>
+            <div class="box">
+              <dialog class="modal" id="modal">
+                <button class="close-button">
+                  <ion-icon name="close-circle"></ion-icon>
+                </button>
+                <div class="options">
+                  <div class="police">
+                    <img src="police.png" alt="" />
+                    <h3>Police Department</h3>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Harum repellendus quasi cupiditate. Necessitatibus,
+                      voluptatem possimus.
+                    </p>
+                    <button class="login pol">Click Here</button>
+                  </div>
+                  <div class="civilian">
+                    <img src="cctv.png" alt="" />
+                    <h3>Register your Camera</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Facilis eligendi illo autem porro doloribus dicta maxime
+                      temporibus optio debitis vero? Ad.
+                    </p>
+                    <button class="login civil">Click Here</button>
+                  </div>
+                </div>
+              </dialog>
+            </div>
+          </ul>
+        </div>
+        <div class="box2">
+          <dialog class="modal2" id="modal2">
+            <button class="close-button2">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+            <ul class="flex">
+              <li class="hover-link nav-item" id="home2">
+                <a href="#page1">Home</a>
+              </li>
+              <li class="hover-link nav-item" id="about2">
+                <a href="#page2">About Us</a>
+              </li>
+              <li class="hover-link nav-item" id="faqs2">
+                <a href="#page3">FAQs</a>
+              </li>
+              <li class="hover-link nav-item" id="contact2">
+                <a href="#page4">Contact Us</a>
+              </li>
+              <button class="login flex open-button" id="login2">
+                Login/Register
+              </button>
+              <div class="box">
+                <dialog class="modal3" id="modal3">
+                  <button class="close-button3">
+                    <ion-icon name="close-circle"></ion-icon>
+                  </button>
+                  <div class="options3">
+                    <div class="police3">
+                      <img src="police.png" alt="" />
+                      <h3>Police Department</h3>
+                      <button class="login pol3">Click Here</button>
+                    </div>
+                    <div class="civilian3">
+                      <img src="cctv.png" alt="" />
+                      <h3>Register your Camera</h3>
+                      <button class="login civil3">Click Here</button>
+                    </div>
+                  </div>
+                </dialog>
+              </div>
+            </ul>
+          </dialog>
+        </div>
+        <button class="menub open-button2" id="menuicon">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </div>
+      <div class="next">Total Number of Cameras Registered: 300</div>
+    </nav>
+    <main>
+      <div id="google_translate_element"></div>
+      <div id="page1">
+        <div class="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <input type="radio" name="radio-btn" id="radio4" />
+            <div class="slide first">
+              <img src="p2.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="p1.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="p3.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="p6.jpeg" alt="" />
+            </div>
+            <div class="navigation-auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+              <div class="auto-btn4"></div>
+            </div>
+          </div>
+          <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="Hero_Logo .png" alt="" />
+        </div>
+      </div>
+      <div id="page2">
+        <div class="overlay">
+          <h1>About Us</h1>
+          <div class="row">
+            <div class="col1">
+              <img src="pol7.webp" alt="" />
+            </div>
+            <div class="col2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis, placeat aut expedita nemo mollitia, quod doloribus
+                minima nihil repellendus ratione dolor reprehenderit ipsa illum
+                voluptatum, non deserunt magnam ea dicta explicabo suscipit quo
+                cumque voluptate esse. Sint, esse! Dolores, delectus alias.
+                Tenetur, accusantium alias? Dolore inventore omnis laudantium
+                blanditiis hic cumque libero recusandae cupiditate? Mollitia
+                incidunt facere consequuntur voluptatibus culpa eaque maxime, et
+                natus itaque quae necessitatibus explicabo est nemo error illo
+                tempore. Molestias incidunt odio earum libero veritatis aliquam,
+                placeat id ex nisi maiores harum voluptatem molestiae beatae
+                similique qui? Exercitationem quae temporibus dolor maiores
+                officia officiis, saepe placeat eum ex aliquam molestias eius?
+                Corrupti doloremque, omnis labore quisquam earum in delectus
+                corporis illo sapiente deleniti accusantium, aperiam et impedit
+                dolor nulla ipsa aliquam fugiat illum esse dolorem voluptatibus
+                dolorum necessitatibus porro exercitationem. Quo vel fugiat
+                perferendis dolore quae id aspernatur, illum, dolorum asperiores
+                eius minus blanditiis natus nulla commodi sapiente minima amet
+                labore veritatis qui possimus fugit nihil aut assumenda
+                consequuntur. Dolore dolores laboriosam aperiam libero
+                molestiae.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+                iusto atque quas hic soluta deserunt inventore quidem natus
+                reiciendis perspiciatis! Consectetur eaque, asperiores quo
+                magnam ullam ipsam animi perferendis beatae odio. Consequuntur
+                rem nesciunt unde, libero iusto soluta reiciendis similique
+                assumenda sint obcaecati maxime dicta quaerat qui officia ipsum
+                laborum?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                similique rerum illum excepturi, suscipit nulla, culpa vero
+                inventore doloremque quasi rem, natus non quisquam quis quidem
+                eos perspiciatis atque libero asperiores quas vel sequi
+                molestiae reiciendis voluptatibus. In, nisi quis?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="vdo">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/-Ay3-K8vEE0?si=vifBVd00G_Vzk3Tz"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div id="page3">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+        <div class="faq">
+          <button class="accordian">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              atque?
+            </p>
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              fugit corrupti repellendus sapiente vitae dolorem earum quidem
+              doloremque fugiat consequuntur.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="page4">
+        <div class="container4">
+          <h1>Contact US</h1>
+          <div class="contact-right">
+            <h2>Any Questions?</h2>
+            <h3>You can ask anything you want to know</h3>
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="7"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <div class="r">
+                <span id="msg"></span>
+                <button type="submit" onclick="reload()" class="btn2">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="rw">
+            <div class="c1">
+              <p>
+                <ion-icon name="mail"></ion-icon
+                >police.hackathon@rajpolice.gov.in
+              </p>
+              <p><ion-icon name="call"></ion-icon>0141-2712263</p>
+            </div>
+            <div class="c2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita
+              odio provident molestias voluptate ipsam labore sit quae iusto,
+              odit esse dolorem est illo reprehenderit, id, deserunt a molestiae
+              repellat? Voluptas!
+            </div>
+            <div class="c3">
+              <a
+                href="https://www.linkedin.com/company/rajasthan-police?originalSubdomain=in"
+                target="_blank"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+              <a
+                href="https://www.facebook.com/PoliceRajasthan"
+                target="_blank"
+              >
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a
+                href="https://www.instagram.com/policerajasthan/?igsh=ZG1sMzFqYjl0cnpq"
+                target="_blank"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a href="https://police.rajasthan.gov.in/" target="_blank">
+                <img src="website.png" alt="" />
+              </a>
+              <a href="https://twitter.com/PoliceRajasthan" target="_blank">
+                <img src="twitter.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      var counter = 1;
+      setInterval(function () {
+        document.getElementById("radio" + counter).checked = true;
+        counter++;
+        if (counter > 4) {
+          counter = 1;
+        }
+      }, 5000);
+    </script>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement("google_translate_element");
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>
